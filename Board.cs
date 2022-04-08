@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace minesweep
@@ -14,6 +15,19 @@ namespace minesweep
 
         public Board() {}
 
+        // Display -------------------------------------------------------
+        public void Display() {
+            StringBuilder s = new StringBuilder();
+
+            for(int i=0;i<this.rows;i++) {
+                for(int j=0;j<this.columns;j++) {
+                    Tile tile = this.tileMap[j+i*this.columns];
+                    s.Append(tile.DrawTile());
+                }
+                s.Append(newL);
+            }
+            Console.WriteLine(s.ToString());
+        }
         // Methods -------------------------------------------------------
         /// <summary>
         /// Method that initiates making of new tile array objects.
@@ -29,7 +43,7 @@ namespace minesweep
             this.columns = columns;
             this.number_of_mines = number_of_mines;
             this.tileMap = MakeEmptyTileMap(rows, columns);
-            InsertMines(this.tileMap, number_of_mines);
+            InsertMines(this.tileMap, number_of_mines); //update tile with mines
         }
 
         public bool GameOver() {return this.state == GameState.GAME_LOST;}

@@ -86,7 +86,7 @@ namespace minesweep
                 else{if(this.nearbyMines == 0) {
                     draw = "0";
                 }else {
-                    draw = this.nearbyMines.ToString();
+                    draw = Convert.ToString(this.nearbyMines);
                 }
              }
             }

@@ -14,6 +14,8 @@ namespace minesweep
             //Display d = new Display();
             //Console.WriteLine(d.Intro());
             Board b = new Board();
+            b.newTileMap(7,20,14);
+            b.Display();
         }
     }
 }
