@@ -67,6 +67,7 @@ namespace minesweep
             return this.tile == this.emptyTile;
         }
 
+        //switch states.
         public void switcheTile() {
             if(this.tile == this.emptyTile) {this.tile = this.flagTile;}
             else if(this.tile == this.flagTile) {this.tile = this.unknown;}

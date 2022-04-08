@@ -7,7 +7,7 @@ namespace minesweep
 {
     public class Board
     {
-        private GameState state;
+        private GameState state; // game running, game over or win
         private Tile[] tileMap; // array of tile objects
         private int number_of_mines, rows, columns;
         private string newL = Environment.NewLine;
@@ -16,7 +16,9 @@ namespace minesweep
 
         // Methods -------------------------------------------------------
         /// <summary>
-        /// 
+        /// Method that initiates making of new tile array objects.
+        /// It then invokes other methods to make empty map array (of tiles),
+        /// as well as invokes method to place mines in the map.
         /// </summary>
         /// <param name="rows"></param>
         /// <param name="columns"></param>
@@ -33,6 +35,12 @@ namespace minesweep
         public bool GameOver() {return this.state == GameState.GAME_LOST;}
         public bool Win() {return this.state == GameState.GAME_WON;}
         
+        /// <summary>
+        /// Method that iterates through tile objects and making array. 
+        /// </summary>
+        /// <param name="rows"></param>
+        /// <param name="columns"></param>
+        /// <returns>tile array</returns>
         private Tile[] MakeEmptyTileMap(int rows, int columns) {
             Tile[] tile = new Tile[rows*columns];
             for(int row=0;row<this.rows;row++) {
@@ -43,6 +51,11 @@ namespace minesweep
             return tile;
         }
 
+        /// <summary>
+        /// Method that randomly generates mines and sets it in a map array.
+        /// </summary>
+        /// <param name="map"></param>
+        /// <param name="number_of_mines"></param>
         private void InsertMines(Tile[] map, int number_of_mines) {
             int size = map.Length;
             Random rnd = new Random();
