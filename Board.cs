@@ -114,6 +114,7 @@ namespace minesweep
                
         }
 
+        // reveal tile after coordinates are given
         public void RevealTile(int row, int col) {
             // avoid negative integers & coordinates need to be whithin range
             if(col >= 0 && col < this.columns && row >=0 && row < this.rows) {
@@ -124,17 +125,39 @@ namespace minesweep
                 if(this.tileMap[pos].GetNearbyMines() == 0) {
                     clear0MineTiles(pos);
                 }
-            }else
-            Console.WriteLine("Sorry, coordinates out of range!");
+            }else {Console.WriteLine("Sorry, coordinates out of range!");}
+
+            CheckIfMineSelected(row, col);
         }
 
+        //CheCK STATE if the game
+        private void CheckIfMineSelected(int x, int y) {
+            if (this.tileMap[y + x * this.columns].IsMine()) {
+                this.state = GameState.GAME_LOST;
+            }else {
+                if(hiddenTiles() == this.number_of_mines) {
+                    this.state = GameState.GAME_WON;
+                }
+            }
+        }
+
+        private int hiddenTiles() {
+            int rest = 0;
+            for(int i =0;i<this.tileMap.Length;i++) {
+                if(this.tileMap[i].Hidden()) {
+                    rest++;
+                }
+            }
+            return rest;
+        }
 
         private void clear(int position){ 
                 if (this.tileMap[position].GetNearbyMines() == 0 &&
                  this.tileMap[position].Hidden() == true)
-                 {  this.tileMap[position].Reveal();
-                     clear0MineTiles(position);}
-                 this.tileMap[position].Reveal();
+                {  this.tileMap[position].Reveal();
+                     clear0MineTiles(position);
+                }   
+                this.tileMap[position].Reveal();  
         }
         /// <summary>
         /// Unhide surrounding area of empty tile 

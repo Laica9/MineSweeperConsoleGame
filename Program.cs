@@ -14,7 +14,7 @@ namespace minesweep
             //Display d = new Display();
             //Console.WriteLine(d.Intro());
             Board b = new Board();
-            b.newTileMap(10,10,14);
+            b.newTileMap(7, 20, 5);
 
             string input;
             bool isRunning = true;
@@ -27,10 +27,19 @@ namespace minesweep
                     isRunning = false;
                     Console.WriteLine("Invalid input, run the game again");
                 }else {
-                int x = int.Parse(xy[0]);
-                int y = int.Parse(xy[1]);
+                    int x = int.Parse(xy[0]);
+                    int y = int.Parse(xy[1]);
 
-                b.RevealTile(x, y);
+                    b.RevealTile(x, y);
+
+                    if(b.Win()) {Console.WriteLine("Congrats, you won!");
+                    b.newTileMap(10,10,14);}
+                    else{
+                    b.GameOver();
+                    Console.WriteLine("Sorry, GAME OVER");
+                    //b.newTileMap(10,10,14);
+                    }
+                
                 }
                 
             }
