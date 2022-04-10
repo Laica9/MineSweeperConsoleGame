@@ -14,7 +14,7 @@ namespace minesweep
             //Display d = new Display();
             //Console.WriteLine(d.Intro());
             Board b = new Board();
-            b.newTileMap(7,20,14);
+            b.newTileMap(10,10,14);
 
             string input;
             bool isRunning = true;

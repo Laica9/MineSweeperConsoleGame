@@ -115,7 +115,51 @@ namespace minesweep
         }
 
         public void RevealTile(int row, int col) {
-            this.tileMap[col + row * this.columns].Reveal();
+            // avoid negative integers & coordinates need to be whithin range
+            if(col >= 0 && col < this.columns && row >=0 && row < this.rows) {
+                int pos = col + row * this.columns;
+                this.tileMap[pos].Reveal();
+
+                //uncover more tiles if there are no nearby mines
+                if(this.tileMap[pos].GetNearbyMines() == 0) {
+                    clear0MineTiles(pos);
+                }
+            }else
+            Console.WriteLine("Sorry, coordinates out of range!");
+        }
+
+
+        private void clear(int position){ 
+                if (this.tileMap[position].GetNearbyMines() == 0 &&
+                 this.tileMap[position].Hidden() == true)
+                 {  this.tileMap[position].Reveal();
+                     clear0MineTiles(position);}
+                 this.tileMap[position].Reveal();
+        }
+        /// <summary>
+        /// Unhide surrounding area of empty tile 
+        /// </summary>
+        /// <param name="position"></param>
+        private void clear0MineTiles(int position) {
+            int col = position % this.columns;
+            bool firstCol = col == 0;
+            bool lastCol = col == this.columns-1;
+            int row = position / this.columns;
+            bool firstRow = row == 0;
+            bool isLastRow = row == this.rows-1;
+
+            if(!firstCol) { clear(position-1);} 
+            if(!lastCol) {clear(position+1);}
+
+            // upper row update [1 row = num of cols]
+            if(!firstRow) {clear(position-this.columns);
+                if(!firstCol) {clear(position-1-this.columns);}
+                if(!lastCol) {clear(position+1-this.columns);} }
+
+            // LOWER ROW UPDATE
+            if(!isLastRow) {clear(position+this.columns);
+                if(!firstCol) {clear(position-1+this.columns);}
+                if(!lastCol) {clear(position+1+this.columns);} }
         }
     }
 }
