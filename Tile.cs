@@ -17,7 +17,8 @@ namespace minesweep
 
         public Tile () {
             this.isMine = false; // by default
-            this.hidden = true;
+            this.hidden = false;
+            //this.unknown = '?';
             this.tile = ' ';
             this.nearbyMines = 0;
         }
@@ -75,7 +76,7 @@ namespace minesweep
         }
 
         public string DrawTile() {
-            String draw;
+         String draw;
             if(this.Hidden()) {
                 if(this.tile == this.unknown) {
                     draw = "?";

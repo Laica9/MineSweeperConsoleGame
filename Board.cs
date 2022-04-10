@@ -85,7 +85,35 @@ namespace minesweep
             }
         }
 
-        private void IncrementNearMines(Tile[] tileArr, int position) {
+        private void IncrementNearMines(Tile[] tileMap, int position) {
+            // if position is first column 
+            int col = position % this.columns; //index
+            bool firstCol = col == 0;
+            bool lastCol = col == this.columns-1;
+
+            // rows
+            int row = position / this.columns;
+            bool firstRow = row == 0;
+            bool isLastRow = row == this.rows-1;
+
+            if(!firstCol) { this.tileMap[position-1].IncrementNearbyMines();} // increment only if its not on col 0 (update left)
+            // if position is not last column (update right)
+            if(!lastCol) {this.tileMap[position+1].IncrementNearbyMines();}
+
+            // upper row update [1 row = num of cols]
+            if(!firstRow) {this.tileMap[position-this.columns].IncrementNearbyMines();
+            if(!firstCol) { this.tileMap[position-1-this.columns].IncrementNearbyMines();} // increment only if its not on col 0 (update left)
+            // if position is not last column (update right)
+            if(!lastCol) {this.tileMap[position+1-this.columns].IncrementNearbyMines();}}
+
+            // LOWER ROW UPDATE
+            if(!isLastRow) {this.tileMap[position+this.columns].IncrementNearbyMines();
+            if(!firstCol) { this.tileMap[position-1+this.columns].IncrementNearbyMines();} // increment only if its not on col 0 (update left)
+            // if position is not last column (update right)
+            if(!lastCol) {this.tileMap[position+1+this.columns].IncrementNearbyMines();}}
+            
+
+
             
         }
     }
