@@ -87,7 +87,7 @@ namespace minesweep
 
         private void IncrementNearMines(Tile[] tileMap, int position) {
             // if position is first column 
-            int col = position % this.columns; //index
+            int col = position % this.columns; //index [25/25 0/0] 
             bool firstCol = col == 0;
             bool lastCol = col == this.columns-1;
 
@@ -111,10 +111,7 @@ namespace minesweep
             if(!firstCol) { this.tileMap[position-1+this.columns].IncrementNearbyMines();} // increment only if its not on col 0 (update left)
             // if position is not last column (update right)
             if(!lastCol) {this.tileMap[position+1+this.columns].IncrementNearbyMines();}}
-            
-
-
-            
+               
         }
     }
 }
