@@ -17,7 +17,7 @@ namespace minesweep
 
         public Tile () {
             this.isMine = false; // by default
-            this.hidden = false;
+            this.hidden = true;
             //this.unknown = '?';
             this.tile = ' ';
             this.nearbyMines = 0;

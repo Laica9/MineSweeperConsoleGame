@@ -17,13 +17,22 @@ namespace minesweep
             b.newTileMap(7,20,14);
 
             string input;
-            while(true) {
+            bool isRunning = true;
+            while(isRunning) {
                 b.Display();
                 Console.WriteLine("Please enter x & y coordinates <x,y> : ");
                 input = Console.ReadLine();
                 string[] xy = input.Split(",");
+                if(xy.Length < 2) {
+                    isRunning = false;
+                    Console.WriteLine("Invalid input, run the game again");
+                }else {
                 int x = int.Parse(xy[0]);
                 int y = int.Parse(xy[1]);
+
+                b.RevealTile(x, y);
+                }
+                
             }
             
         }

@@ -113,5 +113,9 @@ namespace minesweep
             if(!lastCol) {this.tileMap[position+1+this.columns].IncrementNearbyMines();}}
                
         }
+
+        public void RevealTile(int row, int col) {
+            this.tileMap[col + row * this.columns].Reveal();
+        }
     }
 }
