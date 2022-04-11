@@ -79,6 +79,8 @@ namespace minesweep
             if(this.Hidden()) {
                 if(this.tile == this.unknown) {
                     draw = ". ";
+                }else if (this.tile == this.flagTile) {
+                    draw = "! ";
                 }else {draw = "\x1b[36m. \x1b[0m";} // default
             }else {
                 if(this.isMine) {draw = "*";}
