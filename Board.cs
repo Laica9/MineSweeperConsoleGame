@@ -24,9 +24,9 @@ namespace minesweep
                     Tile tile = this.tileMap[j+i*this.columns];
                     s.Append(tile.DrawTile());
                 }
-                s.Append(newL);
+               s.Append(newL) ;
             }
-            Console.WriteLine(s.ToString());
+                Console.WriteLine(s.ToString());
         }
         // Methods -------------------------------------------------------
         /// <summary>

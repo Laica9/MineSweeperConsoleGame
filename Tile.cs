@@ -9,7 +9,7 @@ namespace minesweep
     {
         private bool hidden; // '.'
         private bool isMine; // '*'
-        private char tile; // ' ', 'f', '?'
+        private char tile; 
         private char emptyTile = ' ';
         private char flagTile = 'f';
         private char unknown = '?';
@@ -18,7 +18,6 @@ namespace minesweep
         public Tile () {
             this.isMine = false; // by default
             this.hidden = true;
-            //this.unknown = '?';
             this.tile = ' ';
             this.nearbyMines = 0;
         }
@@ -79,15 +78,14 @@ namespace minesweep
          String draw;
             if(this.Hidden()) {
                 if(this.tile == this.unknown) {
-                    draw = "?";
-                }else if(this.tile == this.flagTile) {draw = "f";}
-                else {draw = ".";} // default
+                    draw = ". ";
+                }else {draw = "\x1b[36m. \x1b[0m";} // default
             }else {
                 if(this.isMine) {draw = "*";}
                 else{if(this.nearbyMines == 0) {
-                    draw = "0";
+                    draw = "0 ";
                 }else {
-                    draw = Convert.ToString(this.nearbyMines);
+                    draw =  "\u001b[35m"+Convert.ToString(this.nearbyMines)+"\u001b[0m" + " ";
                 }
              }
             }
