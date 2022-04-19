@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj": {}
+    "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj": {
+    "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
+        "projectUniqueName": "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
         "projectName": "minesweep",
-        "projectPath": "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
+        "projectPath": "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
         "packagesPath": "C:\\Users\\ioann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\obj\\",
+        "outputPath": "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -77,12 +77,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[6.0.3, 6.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[6.0.3, 6.0.3]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[6.0.3, 6.0.3]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

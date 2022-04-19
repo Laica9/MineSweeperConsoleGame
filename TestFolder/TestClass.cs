@@ -10,16 +10,15 @@ namespace minesweep
     public class TestClass
     {
         [TestMethod]
-         public void TestDisplayMethod () {
-             Display display = new Display();
-              string intro = "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n"+
-                             "██ ▄▀▄ ██▄██ ▄▄▀█ ▄▄██ ▄▄▄ █ ███ █ ▄▄█ ▄▄█▀▄▄▀█ ▄▄█ ▄▄▀██\n"+
-                             "██ █ █ ██ ▄█ ██ █ ▄▄██▄▄▄▀▀█▄▀ ▀▄█ ▄▄█ ▄▄█ ▀▀ █ ▄▄█ ▀▀▄██\n"+
-                             "██ ███ █▄▄▄█▄██▄█▄▄▄██ ▀▀▀ ██▄█▄██▄▄▄█▄▄▄█ ████▄▄▄█▄█▄▄██\n"+
-                             "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ";  
-             Assert.AreEqual(intro, display.Intro(), "Display Title not shown"); 
-
-         }
-        
+        public void TestDisplayMethod()
+        {
+            Display display = new Display();
+            string intro = "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n" +
+                           "██ ▄▀▄ ██▄██ ▄▄▀█ ▄▄██ ▄▄▄ █ ███ █ ▄▄█ ▄▄█▀▄▄▀█ ▄▄█ ▄▄▀██\n" +
+                           "██ █ █ ██ ▄█ ██ █ ▄▄██▄▄▄▀▀█▄▀ ▀▄█ ▄▄█ ▄▄█ ▀▀ █ ▄▄█ ▀▀▄██\n" +
+                           "██ ███ █▄▄▄█▄██▄█▄▄▄██ ▀▀▀ ██▄█▄██▄▄▄█▄▄▄█ ████▄▄▄█▄█▄▄██\n" +
+                           "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ";
+            Assert.AreEqual(intro, display.Intro(), "Display Title not shown");
+        }
     }
 }

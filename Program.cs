@@ -12,6 +12,8 @@ namespace minesweep
         {
             Display d = new Display();
             Console.WriteLine(d.Intro());
+            Tile t = new Tile();
+            Console.WriteLine(t.IsMine());
             Board b = new Board();
             int rows = 5;
             int cols = 11;
