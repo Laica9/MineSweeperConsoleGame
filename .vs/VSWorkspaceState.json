@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TestFolder"
   ],
-  "SelectedNode": "\\C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep",
+  "SelectedNode": "\\TestFolder\\TestClass.cs",
   "PreviewInSolutionExplorer": false
 }
