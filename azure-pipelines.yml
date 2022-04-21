@@ -4,30 +4,39 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
+  steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' # Update this to match your need
+
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+# ...
+# do this after your tests have run
+- script: dotnet test <test-project> --logger trx
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
   inputs:
-    restoreSolution: '$(solution)'
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
 
-- task: VSBuild@1
+    steps:
+# ...
+# do this after other tasks such as building
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    

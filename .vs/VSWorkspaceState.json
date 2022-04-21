@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\TestFolder"
+    "\\HelperClasses"
   ],
-  "SelectedNode": "\\TestFolder\\TestClass.cs",
+  "SelectedNode": "\\Board.cs",
   "PreviewInSolutionExplorer": false
 }
