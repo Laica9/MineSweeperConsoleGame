@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DAfpRbDHyYM+/0//S+cK1tbZ0LXKjrP/JA4w8SIouBCx1r1YEUhMqFhdcgt8YKdxnrkntnVb6wXwHkaZwQSbVA==",
+  "dgSpecHash": "vvKLhy5S9g2PLGpoxqrOb7YS6vBs5al1LSKJSXV7EZeC/dmDKVyU3sL9/Ba0hkKAxkLud15JoZfmxQ9gBSZr1A==",
   "success": true,
-  "projectFilePath": "c:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
+  "projectFilePath": "C:\\Users\\ioann\\Desktop\\TSI\\Week3\\minesweep\\minesweep.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ioann\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\ioann\\.nuget\\packages\\coverlet.msbuild\\3.1.2\\coverlet.msbuild.3.1.2.nupkg.sha512",
